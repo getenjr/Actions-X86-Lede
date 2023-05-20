@@ -15,7 +15,8 @@ an action to build lede
 + luci-app-nlbw(网络监控)
 + luci-app-qos(服务质量)
 + luci-app-arpbind(IP/MAC 绑定)
-
++ luci-app-ttyd(TTYD终端)
++ 
 ## 本系统不包含任何无线网卡相关功能，防火墙为Firewall，不是Firewall4。这两项选择后lede编译不通过。
 
 ## 默认密码：`password`
