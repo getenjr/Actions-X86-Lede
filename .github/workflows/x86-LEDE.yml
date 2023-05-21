@@ -240,7 +240,7 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: 上传固件到 Release
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
@@ -250,13 +250,14 @@ jobs:
           files: ${{ env.FIRMWARE }}/*
 
       - name: 删除 workflow runs
-        uses: GitRML/delete-workflow-runs@main
+        uses: Mattraks/delete-workflow-runs@v2
         with:
+          token: ${{ github.token }}
           retain_days: 3
           keep_minimum_runs: 3
 
       - name: 删除旧的 Releases
-        uses: dev-drprasad/delete-older-releases@master
+        uses: dev-drprasad/delete-older-releases@v0.2
         if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
         with:
           keep_latest: 9
