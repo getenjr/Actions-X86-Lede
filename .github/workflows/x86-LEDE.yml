@@ -147,7 +147,7 @@ jobs:
           [ -e lede/files/etc/uci-defaults ] && ls -l lede/files/etc/uci-defaults/
           echo authorize script finished.
 
-      - name: 运行自定义脚本
+      - name: 运行自定义脚本2
         env:
           ENABLE_FIREWALL: ${{github.event.inputs.firewall}}
           LAN_IP: ${{github.event.inputs.lan-ip}}
