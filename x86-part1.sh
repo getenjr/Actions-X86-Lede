@@ -16,12 +16,18 @@
 #wsl里面编译前加入下面命令，不包含#
 #PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-# Argon主题
+# argon主题
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf package/lean/luci-theme-argon
 rm -rf package/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+
+# neobird主题
+rm -rf feeds/luci/themes/luci-theme-neobird
+rm -rf package/lean/luci-theme-neobird
+rm -rf package/luci-theme-neobird
+git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 
 # 高级设置
 #git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
