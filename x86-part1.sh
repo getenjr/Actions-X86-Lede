@@ -27,6 +27,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 rm -rf feeds/luci/themes/luci-theme-neobird
 rm -rf package/lean/luci-theme-neobird
 rm -rf package/luci-theme-neobird
+sed -i 's/\/cgi-bin\/luci\/admin\/services\/shadowsocksr/\/cgi-bin\/luci\/admin\/services\/openclash/g' package/luci-theme-neobird/luasrc/view/themes/neobird/header.htm
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 
 # 高级设置
