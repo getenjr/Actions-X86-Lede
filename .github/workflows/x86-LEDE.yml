@@ -106,6 +106,7 @@ jobs:
       - name: 载入自定义 Feeds
         run: |
           [ -e $FEEDS_CONF ] && mv $FEEDS_CONF lede/feeds.conf.default
+          ls -l lede
 
       - name: 更新 Feeds
         run: cd lede && ./scripts/feeds update -a
@@ -122,7 +123,7 @@ jobs:
       - name: 载入自定义配置
         run: |
           [ -e files ] && mv files lede/files
-          [ -e $CONFIG_FILE ] && mv $CONFIG_FILE lede/.config
+          mv $CONFIG_FILE lede/.config
 
       - name: 设置初次启动脚本可执行权限
         run: |
