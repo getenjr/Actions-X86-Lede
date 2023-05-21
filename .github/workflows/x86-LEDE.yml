@@ -106,15 +106,18 @@ jobs:
       - name: 载入自定义 Feeds
         run: |
           [ -e $FEEDS_CONF ] && mv $FEEDS_CONF lede/feeds.conf.default
-          chmod +x $DIY_P1_SH
-          cd lede
-          $GITHUB_WORKSPACE/$DIY_P1_SH
 
       - name: 更新 Feeds
         run: cd lede && ./scripts/feeds update -a
 
       - name: 安装 Feeds
         run: cd lede && ./scripts/feeds install -a
+        
+      - name: 执行自定义脚本1
+        run: |
+         chmod +x $DIY_P1_SH
+         cd lede 
+         $GITHUB_WORKSPACE/$DIY_P1_SH
 
       - name: 载入自定义配置
         run: |
