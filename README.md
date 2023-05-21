@@ -29,6 +29,8 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
 + Permissions:`Repository permissions`
   + Actions:`Read and write`
   + Contents:`Read and write`
+  + Environments:`Read and write`
+  + Variables:`Read and write`
 
 ## 致谢
 
