@@ -243,7 +243,7 @@ jobs:
         uses: softprops/action-gh-release@master
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.LEDE_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
@@ -252,7 +252,7 @@ jobs:
       - name: 删除 workflow runs
         uses: Mattraks/delete-workflow-runs@main
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.LEDE_TOKEN }}
           retain_days: 3
           keep_minimum_runs: 3
 
@@ -263,4 +263,4 @@ jobs:
           keep_latest: 9
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.LEDE_TOKEN }}
