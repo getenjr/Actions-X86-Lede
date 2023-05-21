@@ -21,3 +21,20 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
 ## 本系统不包含任何无线网卡相关功能，防火墙为Firewall，不是Firewall4。这两项选择后lede编译不通过。
 
 ## 默认密码：`password`，默认IP：`192.168.2.1`
+
+## 致谢
+
+- [Microsoft](https://www.microsoft.com)
+- [Microsoft Azure](https://azure.microsoft.com)
+- [GitHub](https://github.com)
+- [GitHub Actions](https://github.com/features/actions)
+- [tmate](https://github.com/tmate-io/tmate)
+- [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
+- [csexton/debugger-action](https://github.com/csexton/debugger-action)
+- [Cisco](https://www.cisco.com/)
+- [OpenWrt](https://github.com/openwrt/openwrt)
+- [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
+
+## License
+
+[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE) © P3TERX
