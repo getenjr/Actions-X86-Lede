@@ -13,9 +13,15 @@
 # Xiaorouji Passwall
 #sed -i '$a src-git xiaorouji https://github.com/WYC-2020/openwrt-passwall.git' feeds.conf.default
 
+#wsl里面编译前加入下面命令，不包含#
+#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 # Argon主题
-# lede的argon和openwrt的不通用，不能下载自己修改后的
-#git clone https://github.com/yhl452493373/luci-theme-argon.git package/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon-mod
+rm -rf package/lean/luci-theme-argon
+rm -rf package/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
 # 高级设置
 #git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
