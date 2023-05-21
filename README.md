@@ -17,7 +17,7 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
 + luci-app-ttyd(TTYD终端)
 + luci-theme-argon(argon主题)
 + luci-theme-neobird(neobird主题)
-+ 
+
 ## 本系统不包含任何无线网卡相关功能，防火墙为Firewall，不是Firewall4。这两项选择后lede编译不通过。
 
 ## 默认密码：`password`，默认IP：`192.168.2.1`
