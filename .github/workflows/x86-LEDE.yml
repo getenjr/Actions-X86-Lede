@@ -100,35 +100,52 @@ jobs:
         working-directory: /workdir
         run: |
           df -hT $PWD
+          echo start cloning...
           git clone $REPO_URL -b $REPO_BRANCH lede
           ln -sf /workdir/lede $GITHUB_WORKSPACE/lede
+          echo clone finished.
 
       - name: 载入自定义 Feeds
         run: |
+          echo start loading customize feeds...
           [ -e $FEEDS_CONF ] && mv $FEEDS_CONF lede/feeds.conf.default
-          ls -l lede
+          echo load customize feeds finished.
 
       - name: 更新 Feeds
-        run: cd lede && ./scripts/feeds update -a
+        run: |
+          echo start updating feeds...
+          cd lede
+          ./scripts/feeds update -a
+          echo update feeds finished.
 
       - name: 安装 Feeds
-        run: cd lede && ./scripts/feeds install -a
+        run: |
+          echo start installing feeds...
+          cd lede
+          ./scripts/feeds install -a
+          echo install feeds finished.
         
       - name: 执行自定义脚本1
         run: |
+          echo start executing script...
           chmod +x $DIY_P1_SH
           cd lede 
           $GITHUB_WORKSPACE/$DIY_P1_SH
+          echo execute script finished.
 
       - name: 载入自定义配置
         run: |
+          echo start loading config...
           [ -e files ] && mv files lede/files
-          mv $CONFIG_FILE lede/.config
+          [ -e $CONFIG_FILE ] && mv $CONFIG_FILE lede/.config
+          echo load config finished.
 
       - name: 设置初次启动脚本可执行权限
         run: |
+          echo start authorizing script...
           [ -e lede/files/etc/uci-defaults ] && chmod +x -R lede/files/etc/uci-defaults/
           [ -e lede/files/etc/uci-defaults ] && ls -l lede/files/etc/uci-defaults/
+          echo authorize script finished.
 
       - name: 运行自定义脚本
         env:
@@ -142,27 +159,33 @@ jobs:
           NPC_PORT: ${{github.event.inputs.npc-port}}
           NPC_VKEY: ${{github.event.inputs.npc-vkey}}
         run: |
+          echo start executing script...
           chmod +x $DIY_P2_SH
           cd lede
           $GITHUB_WORKSPACE/$DIY_P2_SH
+          echo execute script finished.
 
       - name: 下载所需文件
         id: package
         run: |
           cd lede
+          echo start downloading...
           make defconfig
           make download -j$(nproc)
+          echo download finished.
 
       - name: 编译固件
         id: compile
         run: |
           cd lede
+          echo start compiling...
           echo -e "$(nproc) thread compile"
           make -j$(nproc) || make -j1 || make -j1 V=s
           echo "status=success" >> $GITHUB_OUTPUT
           grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
           [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
           echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
+          echo compile finished.
 
       - name: 检查使用空间
         if: (!cancelled())
