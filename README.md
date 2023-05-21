@@ -22,7 +22,7 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
 
 ## 默认密码：`password`，默认IP：`192.168.2.1`
 
-### 云编译需要 [在此](https://github.com/settings/tokens)生成个`Fine-grained personal access tokens`，做如下设置：
+### 云编译需要[在此](https://github.com/settings/tokens)生成`Fine-grained personal access tokens`，做如下设置：
 + Token name:`LEDE_TOKEN`
 + Expiration:`90 Days`，注意意味着token90天后过期，到时需要重新生成
 + Repository access: `Only select repositories`->选中自己的`Actions-X86-Lede`
