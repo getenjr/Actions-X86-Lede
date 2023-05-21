@@ -32,6 +32,12 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
   + Environments:`Read and write`
   + Variables:`Read and write`
 
+以上操作生成token后，把token的值复制，然后依次点击击项目的`Settings`-`Secrets and variables`-`Actions`-`New repository secret`，之后填写内容：
++ Name:`LEDE_TOKEN`
++ Secret:上面操作得到的Token的值
+
+最后点击`Add secret`，然后就可以在`Actions`中进行编译了
+
 ## 致谢
 
 - [Microsoft](https://www.microsoft.com)
