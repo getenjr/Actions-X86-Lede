@@ -14,7 +14,6 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
 + luci-app-autoreboot(定时重启)
 + luci-app-poweroff(关机)
 + luci-app-firewall(防火墙)
-+ luci-app-nlbwmon(网络监控)
 + luci-app-qos(服务质量)
 + luci-app-arpbind(IP/MAC 绑定)
 + luci-app-ttyd(TTYD终端)
