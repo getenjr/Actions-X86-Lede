@@ -8,10 +8,10 @@
 #=================================================
 
 #修复netfilter在linux 6.1.x上无法编译问题
-sed -i 's/CONFIG_NF_FLOW_TABLE_IPV4 \\/CONFIG_NF_FLOW_TABLE_IPV4@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
-sed -i 's/CONFIG_NF_FLOW_TABLE_IPV6 \\/CONFIG_NF_FLOW_TABLE_IPV6@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
-sed -i 's/$(LINUX_DIR)\/net\/ipv4\/netfilter\/nf_flow_table_ipv4.ko \\/$(LINUX_DIR)\/net\/ipv4\/netfilter\/nf_flow_table_ipv4.ko@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
-sed -i 's/$(LINUX_DIR)\/net\/ipv6\/netfilter\/nf_flow_table_ipv6.ko \\/$(LINUX_DIR)\/net\/ipv6\/netfilter\/nf_flow_table_ipv6.ko@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
+#sed -i 's/CONFIG_NF_FLOW_TABLE_IPV4 \\/CONFIG_NF_FLOW_TABLE_IPV4@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
+#sed -i 's/CONFIG_NF_FLOW_TABLE_IPV6 \\/CONFIG_NF_FLOW_TABLE_IPV6@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
+#sed -i 's/$(LINUX_DIR)\/net\/ipv4\/netfilter\/nf_flow_table_ipv4.ko \\/$(LINUX_DIR)\/net\/ipv4\/netfilter\/nf_flow_table_ipv4.ko@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
+#sed -i 's/$(LINUX_DIR)\/net\/ipv6\/netfilter\/nf_flow_table_ipv6.ko \\/$(LINUX_DIR)\/net\/ipv6\/netfilter\/nf_flow_table_ipv6.ko@lt6.1 \\/g' package/kernel/linux/modules/netfilter.mk
 
 #调整软件在菜单中的名称
 #luci-app-upnp
