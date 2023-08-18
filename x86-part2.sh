@@ -21,13 +21,20 @@ sed -i 's/msgstr "通用即插即用（UPnP）"/msgstr "即插即用（UPnP）"/
 sed -i 's/msgstr "QoS"/msgstr "服务质量"/g' feeds/luci/applications/luci-app-qos/po/zh-cn/qos.po
 #luci-app-ttyd
 sed -i 's/msgstr "TTYD 终端"/msgstr "网页终端"/g' feeds/luci/applications/luci-app-ttyd/po/zh-cn/terminal.po
-
 #luci-app-openclash
 sed -i 's/msgstr "OpenClash"/msgstr "科学上网"/g' package/luci-app-openclash/luci-app-openclash/po/zh-cn/openclash.zh-cn.po
 #luci-app-npc
-sed -i '/msgid "Nps Client"/i\msgid "Npc"\nmsgstr "内网穿透"\n' package/luci-app-npc/po/zh-cn/npc.po
+sed -i '/msgid "Nps Client"/i\msgid "Npc"\nmsgstr "NPS穿透"\n' package/luci-app-npc/po/zh-cn/npc.po
+#luci-app-frpc
+sed -i 's/msgstr "Frp 内网穿透"/msgstr "FRP穿透"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Frp 是一个可用于内网穿透的高性能的反向代理应用。"/msgstr "frp 是一个可用于内网穿透的高性能的反向代理应用。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Frp 域名配置"/msgstr "域名配置"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "配置 Frp 协议参数"/msgstr "配置协议参数"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Frp 协议类型"/msgstr "协议类型"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Frp 支持通过url路由将http请求转发到不同的反向web服务。"/msgstr "frp 支持通过url路由将http请求转发到不同的反向web服务。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Frp可以用修改后的主机头重写http请求。"/msgstr "frp 可以用修改后的主机头重写http请求。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Http用户名和密码是Http协议的安全认证。"/msgstr "http用户名和密码是http协议的安全认证。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 
-  
 # 修改LAN口默认IP
 if [[ "${LAN_IP}" != "" ]]; then
   sed -i 's/192.168.2.1/'"${LAN_IP}"'/g' files/etc/config/network
