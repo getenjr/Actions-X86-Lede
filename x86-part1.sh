@@ -47,8 +47,8 @@ git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/lu
 # frp
 rm -rf feeds/luci/applications/luci-app-frpc
 rm -rf feeds/packages/net/frp
-git clone https://github.com/yhl452493373/luci-app-frpc feeds/luci/applications/
-git clone https://github.com/kuoruan/openwrt-frp.git feeds/packages/net/frp
+git clone https://github.com/yhl452493373/luci-app-frpc.git feeds/luci/applications/luci-app-frpc
+git clone https://github.com/yhl452493373/openwrt-frp.git feeds/packages/net/frp
 
 # 关机
 git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
