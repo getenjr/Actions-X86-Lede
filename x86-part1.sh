@@ -47,6 +47,12 @@ git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/lu
 # frp
 rm -rf feeds/packages/net/frp
 git clone https://github.com/yhl452493373/openwrt-frp.git feeds/packages/net/frp
+FRP_URL=$( curl -sL https://api.github.com/repos/fatedier/frp/releases | grep -P 'download/v[\d.]+/frp_[\d.]+_linux_amd64.tar.gz' | awk -F '"' '{print $4}' | awk 'NR==1{print}' )
+FRP_VERSION=$( echo $FRP_URL | awk -F '/' '{print $8}' | awk '{gsub(/v/,"");print $1}' )
+FRP_HASH=$( curl -sL https://codeload.github.com/fatedier/frp/tar.gz/v0.51.3 | sha256sum | awk -F ' ' '{print $1}' )
+# 更新frp源码到最新版本
+sed -i -e 's/^PKG_VERSION.*/PKG_VERSION:='''$FRP_VERSION'''/' feeds/packages/net/frp/Makefile
+sed -i -e 's/^PKG_HASH.*/PKG_HASH:='''$FRP_HASH'''/' feeds/packages/net/frp/Makefile
 
 # FRP穿透
 rm -rf feeds/luci/applications/luci-app-frpc
