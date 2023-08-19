@@ -44,16 +44,16 @@ mv package/luci-app-npc/po/zh_Hans package/luci-app-npc/po/zh-cn
 # OpenClash，此处使用开发版
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 
-# luci-app-frpc
+# frp
+rm -rf feeds/packages/net/frp
+git clone https://github.com/yhl452493373/openwrt-frp.git feeds/packages/net/frp
+
+# FRP穿透
 rm -rf feeds/luci/applications/luci-app-frpc
 git clone https://github.com/yhl452493373/luci-app-frpc.git feeds/luci/applications/luci-app-frpc
 # 修正文件权限
 chmod 755 feeds/luci/applications/luci-app-frpc/root/etc/init.d/frp
 chmod 755 feeds/luci/applications/luci-app-frpc/root/etc/uci-defaults/luci-frp
-
-# frp
-rm -rf feeds/packages/net/frp
-git clone https://github.com/yhl452493373/openwrt-frp.git feeds/packages/net/frp
 
 # 关机
 git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
