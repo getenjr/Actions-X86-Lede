@@ -21,8 +21,8 @@ rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-argon-mod
 rm -rf package/lean/luci-theme-argon
 rm -rf package/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-#git clone -b 18.06 https://github.com/yhl452493373/luci-theme-argon.git package/luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone -b 18.06 https://github.com/yhl452493373/luci-theme-argon.git package/luci-theme-argon
 
 # neobird主题
 rm -rf feeds/luci/themes/luci-theme-neobird
