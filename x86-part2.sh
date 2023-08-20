@@ -32,7 +32,7 @@ sed -i 's/msgstr "Frp 域名配置"/msgstr "域名配置"/g' feeds/luci/applicat
 sed -i 's/msgstr "配置 Frp 协议参数"/msgstr "配置协议参数"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 sed -i 's/msgstr "Frp 协议类型"/msgstr "协议类型"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 sed -i 's/msgstr "Frp 支持通过url路由将http请求转发到不同的反向web服务。"/msgstr "frp 支持通过url路由将http请求转发到不同的反向web服务。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
-sed -i 's/msgstr "Frp可以用修改后的主机头重写http请求。"/msgstr "frp 可以用修改后的主机头重写http请求。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
+sed -i 's/msgstr "Frp 可以用修改后的主机头重写http请求。"/msgstr "frp 可以用修改后的主机头重写http请求。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 sed -i 's/msgstr "Http用户名和密码是Http协议的安全认证。"/msgstr "http用户名和密码是http协议的安全认证。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 
 # 修改LAN口默认IP
