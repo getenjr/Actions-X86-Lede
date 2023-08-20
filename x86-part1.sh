@@ -57,9 +57,6 @@ sed -i -e 's/^PKG_HASH.*/PKG_HASH:='''$FRP_HASH'''/' feeds/packages/net/frp/Make
 # FRP穿透
 rm -rf feeds/luci/applications/luci-app-frpc
 git clone https://github.com/yhl452493373/luci-app-frpc.git feeds/luci/applications/luci-app-frpc
-# 修正文件权限
-chmod 755 feeds/luci/applications/luci-app-frpc/root/etc/init.d/frp
-chmod 755 feeds/luci/applications/luci-app-frpc/root/etc/uci-defaults/luci-frp
 
 # 关机
 git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
