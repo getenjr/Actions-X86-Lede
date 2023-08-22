@@ -7,7 +7,8 @@ Build lede using GitHub Actions | 使用 GitHub Actions 云编译 lede
 ### 额外包含以下软件
 
 + luci-app-openclash(科学上网)
-+ luci-app-npc(内网穿透)
++ luci-app-npc(NPS穿透)
++ luci-app-frpc(FRP穿透)
 + luci-app-ddns(动态DNS)
 + luci-app-upnp(即插即用)
 + luci-app-samba4(网络共享)
