@@ -43,9 +43,9 @@ fi
 
 # 设置WAN口静态IP
 if [[ "${WAN_IP}" != "" && "${WAN_NETMASK}" != "" && "${WAN_GATEWAY}" != "" ]]; then
-  sed -i "/        option proto 'dhcp'/a\        option gateway '"${WAN_GATEWAY}"'" files/etc/config/network
-  sed -i "/        option proto 'dhcp'/a\        option netmask '"${WAN_NETMASK}"'" files/etc/config/network
-  sed -i "/        option proto 'dhcp'/a\        option ipaddr '"${WAN_IP}"'" files/etc/config/network
+  sed -i "/        option proto 'dhcp'/a\        option gateway '""${WAN_GATEWAY}""'" files/etc/config/network
+  sed -i "/        option proto 'dhcp'/a\        option netmask '""${WAN_NETMASK}""'" files/etc/config/network
+  sed -i "/        option proto 'dhcp'/a\        option ipaddr '""${WAN_IP}""'" files/etc/config/network
   sed -i "s/        option proto 'dhcp'/        option proto 'static'/g" files/etc/config/network
 fi
 
@@ -61,8 +61,9 @@ fi
 
 # 如果设置了wan口，进行相应配置
 if [[ "${WAN_ETH}" != "" ]]; then
-  sed -i "s/option device 'eth0'/option device '"${WAN_ETH}"'/g" files/etc/config/network
-  sed -i "s/list ports '"${WAN_ETH}"'/list ports 'eth0'/g" files/etc/config/network
+  sed -i 's/AUTO_SET_WAN_INTERFACE="true"/AUTO_SET_WAN_INTERFACE="false"/g' files/etc/uci-defaults/99-network-interfaces
+  sed -i "s/option device 'eth0'/option device '""${WAN_ETH}""'/g" files/etc/config/network
+  sed -i "s/list ports '""${WAN_ETH}""'/list ports 'eth0'/g" files/etc/config/network
 fi
 
 # 修改编译信息
