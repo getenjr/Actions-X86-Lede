@@ -59,13 +59,10 @@ if [[ "${ENABLE_FIREWALL}" == "false" ]]; then
   sed -i "s/#uci commit openclash/uci commit openclash/g" files/etc/uci-defaults/100-default-settings
 fi
 
-# 如果启用npc，进行相应配置
-if [[ "${NPC_SERVER}" != "" && "${NPC_PORT}" != "" && "${NPC_VKEY}" != "" ]]; then
-  sed -i "s/uci -q set npc.config.protocol='tcp'/uci -q set npc.config.protocol='"${NPC_PROTOCOL}"'/g" files/etc/uci-defaults/100-default-settings
-  sed -i "s/uci -q set npc.config.enabled='0'/uci -q set npc.config.enabled='1'/g" files/etc/uci-defaults/100-default-settings
-  sed -i "s/uci -q set npc.config.server_addr=''/uci -q set npc.config.server_addr='"${NPC_SERVER}"'/g" files/etc/uci-defaults/100-default-settings
-  sed -i "s/uci -q set npc.config.server_port=''/uci -q set npc.config.server_port='"${NPC_PORT}"'/g" files/etc/uci-defaults/100-default-settings
-  sed -i "s/uci -q set npc.config.vkey=''/uci -q set npc.config.vkey='"${NPC_VKEY}"'/g" files/etc/uci-defaults/100-default-settings
+# 如果设置了wan口，进行相应配置
+if [[ "${WAN_ETH}" != "" ]]; then
+  sed -i "s/option device 'eth0'/option device '"${WAN_ETH}"'/g" files/etc/config/network
+  sed -i "s/list ports '"${WAN_ETH}"'/list ports 'eth0'/g" files/etc/config/network
 fi
 
 # 修改编译信息
