@@ -31,10 +31,9 @@ on:
       wan-eth:
         description: 'WAN接口'
         required: false
-        default: 'auto'
+        default: 'eth0'
         type: choice
         options:
-          - 'auto'
           - 'eth0'
           - 'eth1'
           - 'eth2'
