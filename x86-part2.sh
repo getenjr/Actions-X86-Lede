@@ -60,7 +60,7 @@ if [[ "${ENABLE_FIREWALL}" == "false" ]]; then
 fi
 
 # 如果设置了wan口，进行相应配置
-if [[ "${WAN_ETH}" != "" ]]; then
+if [[ "${WAN_ETH}" != "" && "${WAN_ETH}" != "eth0" ]]; then
   sed -i "s/option device 'eth0'/option device '""${WAN_ETH}""'/g" files/etc/config/network
   sed -i "s/list ports '""${WAN_ETH}""'/list ports 'eth0'/g" files/etc/config/network
 fi
