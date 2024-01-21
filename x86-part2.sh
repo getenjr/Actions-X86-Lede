@@ -21,6 +21,7 @@ sed -i 's/msgstr "通用即插即用（UPnP）"/msgstr "即插即用（UPnP）"/
 sed -i 's/msgstr "QoS"/msgstr "服务质量"/g' feeds/luci/applications/luci-app-qos/po/zh-cn/qos.po
 #luci-app-ttyd
 sed -i 's/msgstr "TTYD 终端"/msgstr "网页终端"/g' feeds/luci/applications/luci-app-ttyd/po/zh-cn/terminal.po
+sed -i 's/"http:\/\/"/window.location.protocol + "\/\/"/g' feeds/luci/applications/luci-app-ttyd/luasrc/view/terminal.htm
 #luci-app-openclash
 sed -i 's/msgstr "OpenClash"/msgstr "科学上网"/g' package/luci-app-openclash/luci-app-openclash/po/zh-cn/openclash.zh-cn.po
 #luci-app-npc
