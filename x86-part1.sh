@@ -35,12 +35,14 @@ sed -i 's/\/cgi-bin\/luci\/admin\/services\/shadowsocksr/\/cgi-bin\/luci\/admin\
 #git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 
 # NPS内网穿透的客户端NPC
-# lede自带npc，这里就不需要再下载了
+# 删除lede自带npc、nps
+rm -rf feeds/packages/net/nps
+
+# 下载自己的npc
 git clone https://github.com/yhl452493373/npc.git package/npc
 git clone https://github.com/yhl452493373/luci-app-npc.git package/luci-app-npc
 #修正npc翻译问题
 mv package/luci-app-npc/po/zh_Hans package/luci-app-npc/po/zh-cn
-
 # OpenClash，此处使用开发版
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 
