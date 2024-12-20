@@ -15,8 +15,8 @@
 
 #调整软件在菜单中的名称
 #luci-app-upnp
-sed -i 's/msgstr "UPnP"/msgstr "即插即用"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
-sed -i 's/msgstr "通用即插即用（UPnP）"/msgstr "即插即用（UPnP）"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
+# sed -i 's/msgstr "UPnP"/msgstr "即插即用"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
+# sed -i 's/msgstr "通用即插即用（UPnP）"/msgstr "即插即用（UPnP）"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
 #luci-app-qos
 sed -i 's/msgstr "QoS"/msgstr "服务质量"/g' feeds/luci/applications/luci-app-qos/po/zh-cn/qos.po
 #luci-app-ttyd
@@ -25,7 +25,7 @@ sed -i 's/"http:\/\/"/window.location.protocol + "\/\/"/g' feeds/luci/applicatio
 #luci-app-openclash
 sed -i 's/msgstr "OpenClash"/msgstr "科学上网"/g' package/luci-app-openclash/luci-app-openclash/po/zh-cn/openclash.zh-cn.po
 #luci-app-npc
-sed -i '/msgid "Nps Client"/i\msgid "Npc"\nmsgstr "NPS穿透"\n' package/luci-app-npc/po/zh-cn/npc.po
+# sed -i '/msgid "Nps Client"/i\msgid "Npc"\nmsgstr "NPS穿透"\n' package/luci-app-npc/po/zh-cn/npc.po
 #luci-app-frpc
 #sed -i 's/msgstr "Frp 内网穿透"/msgstr "FRP穿透"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 #sed -i 's/msgstr "Frp 是一个可用于内网穿透的高性能的反向代理应用。"/msgstr "frp 是一个可用于内网穿透的高性能的反向代理应用。"/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
