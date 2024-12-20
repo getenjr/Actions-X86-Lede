@@ -11,7 +11,7 @@
 
 # Add a feed source
 # Xiaorouji Passwall
-#sed -i '$a src-git xiaorouji https://github.com/WYC-2020/openwrt-passwall.git' feeds.conf.default
+sed -i '$a src-git xiaorouji https://github.com/WYC-2020/openwrt-passwall.git' feeds.conf.default
 
 #wsl里面编译前加入下面命令，不包含#
 #PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -36,13 +36,13 @@ sed -i 's/\/cgi-bin\/luci\/admin\/services\/shadowsocksr/\/cgi-bin\/luci\/admin\
 
 # NPS内网穿透的客户端NPC
 # 删除lede自带npc、nps
-rm -rf feeds/packages/net/nps
+# rm -rf feeds/packages/net/nps
 
 # 下载自己的npc
-git clone https://github.com/yhl452493373/npc.git package/npc
-git clone https://github.com/yhl452493373/luci-app-npc.git package/luci-app-npc
+# git clone https://github.com/yhl452493373/npc.git package/npc
+# git clone https://github.com/yhl452493373/luci-app-npc.git package/luci-app-npc
 #修正npc翻译问题
-mv package/luci-app-npc/po/zh_Hans package/luci-app-npc/po/zh-cn
+# mv package/luci-app-npc/po/zh_Hans package/luci-app-npc/po/zh-cn
 # OpenClash，此处使用开发版
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 
